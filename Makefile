@@ -24,11 +24,11 @@ clean:
 
 analysis:
 	Rscript -e 'rmarkdown::render("README.Rmd", output_format = "rmarkdown::github_document", output_dir="docs")';\
-  git clone https://$GITHUB_PAT@github.com/$TRAVIS_REPO_SLUG.git ../new_version;\
-  git config user.name $AUTHORNAME ;\
-  git config user.email $AUTHOREMAIL ;\
+  git clone https://$(GITHUB_PAT)@github.com/$(TRAVIS_REPO_SLUG).git ../new_version;\
+  git config user.name $(AUTHORNAME) ;\
+  git config user.email $(AUTHOREMAIL) ;\
   cp docs/ ../new_version/ ;\
   cd ../new_version ;\
-  git commit -am "Documents produced in clean evironment via Travis $TRAVIS_BUILD_NUMBER" ;\
+  git commit -am "Documents produced in clean evironment via Travis $(TRAVIS_BUILD_NUMBER)" ;\
   git push --quiet origin master
 
