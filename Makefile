@@ -15,7 +15,7 @@ analysis:
 	Rscript -e 'rmarkdown::render("README.Rmd", output_format = "rmarkdown::github_document", output_dir="docs")'
 
 commit:
-  git commit -am "Documents produced in clean environment via Travis $(TRAVIS_BUILD_NUMBER)"
+  git commit -am "Documents produced in clean environment via Travis ${TRAVIS_BUILD_NUMBER}"
 
 push:
   git push --quiet origin master
