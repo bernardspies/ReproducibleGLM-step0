@@ -8,7 +8,7 @@ RENDERDIR = "../new_version"
 getrepo:
   git clone https://$(GITHUB_PAT)@github.com/$(TRAVIS_REPO_SLUG).git $(RENDERDIR)
   git config --global user.name $(AUTHORNAME)
-  git config --global user.email $(AUTHOREMAIL)
+  git config --global user.email $(AUTHOREMAIL);\
   cd $(RENDERDIR)
 
 analysis:
