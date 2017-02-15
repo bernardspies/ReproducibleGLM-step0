@@ -4,9 +4,10 @@ MODELSRC  = $(shell basename `pwd`)
 AUTHORNAME = "Steph"
 AUTHOREMAIL = "Steph@itsalocke.com"
 RENDERDIR = "../new_version"
+GITURL = "https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git"
 
 getrepo:
-  git clone https://$(GITHUB_PAT)@github.com/$(TRAVIS_REPO_SLUG).git $(RENDERDIR)
+  git clone $(GITURL) $(RENDERDIR)
   git config --global user.name $(AUTHORNAME)
   git config --global user.email $(AUTHOREMAIL)
 
