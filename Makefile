@@ -21,5 +21,4 @@ clean:
 	$(RM) -r $(MODELNAME).Rcheck/
 
 analysis:
-	cd ..;\
 	Rscript -e 'rmarkdown::render("README.Rmd", output_format = "rmarkdown::github_document", out)'
