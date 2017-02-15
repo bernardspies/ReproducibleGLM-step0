@@ -1,7 +1,7 @@
 MODELNAME = $(shell sed -n "s/Package: *\([^ ]*\)/\1/p" DESCRIPTION)
 MODELVERS = $(shell sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION)
 MODELSRC  = $(shell basename `pwd`)
-AUTHORNAME = "Steph Locke"
+AUTHORNAME = "Steph"
 AUTHOREMAIL = "Steph@itsalocke.com"
 RENDERDIR = "../new_version"
 
