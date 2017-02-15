@@ -29,7 +29,7 @@ getrepo:
   git config --global user.email $(AUTHOREMAIL)
 
 analysis: getrepo
-	Rscript -e 'rmarkdown::render("README.Rmd", output_format = "rmarkdown::github_document", output_dir="$(RENDERDIR)/docs")';\
+	Rscript -e 'rmarkdown::render("README.Rmd", output_format = "rmarkdown::github_document", output_dir=$(RENDERDIR/docs))';\
   git commit -am "Documents produced in clean evironment via Travis $(TRAVIS_BUILD_NUMBER)" ;\
   git push --quiet origin master
 
