@@ -4,4 +4,4 @@ language: R
 sudo: false
 cache: packages
 script:
-  - make analysis
+  - make pushchanges

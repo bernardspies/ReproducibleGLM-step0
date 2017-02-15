@@ -26,10 +26,13 @@ clean:
 getrepo:
   git clone https://$(GITHUB_PAT)@github.com/$(TRAVIS_REPO_SLUG).git $(RENDERDIR);\
   git config --global user.name $(AUTHORNAME) ;\
-  git config --global user.email $(AUTHOREMAIL)
+  git config --global user.email $(AUTHOREMAIL) ;\
+  cd $(RENDERDIR)
 
-analysis: getrepo
-	Rscript -e 'rmarkdown::render("README.Rmd", output_format = "rmarkdown::github_document", output_dir=$(RENDERDIR/docs))';\
+analysis:
+	Rscript -e 'rmarkdown::render("README.Rmd", output_format = "rmarkdown::github_document", output_dir="docs")';\
+
+pushchanges: getrepo analysis
   git commit -am "Documents produced in clean evironment via Travis $(TRAVIS_BUILD_NUMBER)" ;\
   git push --quiet origin master
 
