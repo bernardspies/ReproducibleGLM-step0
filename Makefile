@@ -14,7 +14,8 @@ getrepo:
 analysis:
 	Rscript -e 'rmarkdown::render("README.Rmd", output_format = "rmarkdown::github_document", output_dir="docs")'
 
-pushchanges: getrepo analysis
-  git commit -am "Documents produced in clean evironment via Travis $(TRAVIS_BUILD_NUMBER)" ;\
+pushchanges:
+  git commit -am "Documents produced in clean evironment via Travis $(TRAVIS_BUILD_NUMBER)";\
   git push --quiet origin master
 
+build: getrepo analysis pushchanges
