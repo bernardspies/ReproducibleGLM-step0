@@ -17,4 +17,4 @@ Rscript -e 'rmarkdown::render("README.Rmd", output_format = rmarkdown::github_do
 
 git add .
 git commit -am "[ci skip] Documents produced in clean environment via Travis $TRAVIS_BUILD_NUMBER"
-git push --quiet origin master
+git push -u  --quiet origin master
