@@ -10,3 +10,5 @@ Bits and pieces in use in this project:
 -   Git
 -   Travis-CI
 -   Makefile
+
+#edit by Bernard to test git push/pull from local computer
