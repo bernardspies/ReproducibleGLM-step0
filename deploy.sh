@@ -8,6 +8,7 @@ RENDERDIR="../new_version"
 GITURL="https://$GITHUB_PAT@github.com/$TRAVIS_REPO_SLUG.git"
 
 git remote set-url origin $GITURL
+git checkout master
 git config --global user.name $AUTHORNAME
 git config --global user.email $AUTHOREMAIL
 
